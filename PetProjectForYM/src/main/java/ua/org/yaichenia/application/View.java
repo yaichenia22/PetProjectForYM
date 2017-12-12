@@ -4,9 +4,9 @@ import java.util.List;
 
 public class View {
 	
-	public static final String INPUT_VOLUME = "Введите объем в литрах: ";
-	public static final String WRONG_INPUT = "Неверный ввод! Объем должен быть равен в диапазоне от "+ Model.LOWER_LIMIT_OF_INPUT_VOLUME
-												+ " до " + Model.UPPER_LIMIT_OF_INPUT_VOLUME + " литров";
+	public static final String INPUT_VOLUME = "Р’РІРµРґРёС‚Рµ РѕР±СЉРµРј: ";
+	public static final String WRONG_INPUT = "РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ! РћР±СЉРµРј РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ "+ Model.LOWER_LIMIT_OF_INPUT_VOLUME
+												+ " РґРѕ " + Model.UPPER_LIMIT_OF_INPUT_VOLUME + " Р»РёС‚СЂРѕРІ.";
 	
 	public void printMessage(String message) {
 		System.out.println(message);
@@ -25,7 +25,7 @@ public class View {
 	}
 	
 	private void printInputVolume(int inputVolume) {
-		System.out.println("Объем (n) = " + inputVolume);
+		System.out.println("РћР±СЉРµРј (n) = " + inputVolume);
 	}
 	
 	private void printPossibleCombinations(List<Integer[]> possibleCombinations) {
@@ -34,7 +34,7 @@ public class View {
 			numberOfCombination++;
 			StringBuilder output = new StringBuilder(numberOfCombination + ") ");
 			for (int i = 0; i < localCombination.length; i++) {
-				String temp = localCombination[i] != 0 ? (localCombination[i]) + " по " + Model.RESERVOIR_VOLUMES[i] + "л": "";
+				String temp = localCombination[i] != 0 ? (localCombination[i]) + " РїРѕ " + Model.RESERVOIR_VOLUMES[i] + "Р»": "";
 				output.append(temp);
 				if(i != localCombination.length - 1 && localCombination[i] != 0) {
 					output.append(", ");
@@ -45,6 +45,6 @@ public class View {
 	}
 	
 	private void printTotalCountOfPossibleCombinations(int inputVolume, int totalCountOfPossibleCombinations) {
-		System.out.println("Итого, при объеме (n) " + inputVolume + "л наш ответ будет " + totalCountOfPossibleCombinations);
+		System.out.println("РС‚РѕРіРѕ, РґР»СЏ РѕР±СЉРµРјР° (n) " + inputVolume + "Р» РЅР°С€ СЂРµР·СѓР»СЊС‚Р°С‚ Р±СѓРґРµС‚ " + totalCountOfPossibleCombinations);
 	}
 }
